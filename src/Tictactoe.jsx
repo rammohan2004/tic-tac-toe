@@ -109,7 +109,7 @@ function Tictactoe(){
     }
     return(
         <>
-        <h1 style={{color:"blue"}}>TIC-TAC-TOE</h1>
+        <h1 style={{color:"#028391"}}>TIC-TAC-TOE</h1>
         {!winner && !draw && <h2>Player {symbol?"2":"1"} turn</h2>}
         <div className="Tictactoe">
            {
@@ -125,7 +125,7 @@ function Tictactoe(){
            ))
            }
         </div>
-        {draw && <><h2>Draw</h2> <button onClick={reset}>Reset</button></> 
+        {draw && <><h2>Draw</h2> <button onClick={reset}>Replay</button></> 
         || winner && <><h2>Player {symbol?"1":"2"} Won</h2> <button onClick={reset}>Replay</button></>}
         
         </>

@@ -90,7 +90,7 @@ function Tictactoe(){
        if(boxes[idx].circle==0 && boxes[idx].cross==0){
         if(symbol){
             boxes[idx].circle=1;
-            boxes[idx].color="white";
+            boxes[idx].color="#E88D67";
            }
            else{
             boxes[idx].cross=1;

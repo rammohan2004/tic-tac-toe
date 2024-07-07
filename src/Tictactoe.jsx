@@ -87,23 +87,24 @@ function Tictactoe(){
        return flag;
     }
     function addSymbol(idx){
-       if(symbol){
-       
-        boxes[idx].circle=1;
-        boxes[idx].color="white";
+       if(boxes[idx].circle==0 && boxes[idx].cross==0){
+        if(symbol){
+            boxes[idx].circle=1;
+            boxes[idx].color="white";
+           }
+           else{
+            boxes[idx].cross=1;
+            boxes[idx].color="red";
+           }
+           if(win()){
+            setWinner(true);
+           }
+           else if( isAllBoxesMarked()){
+            setDraw(true);
+           }
+           setSymbol(!symbol);
+           setBoxes([...boxes]);
        }
-       else{
-        boxes[idx].cross=1;
-        boxes[idx].color="red";
-       }
-       if(win()){
-        setWinner(true);
-       }
-       else if( isAllBoxesMarked()){
-        setDraw(true);
-       }
-       setSymbol(!symbol);
-       setBoxes([...boxes]);
        
     }
     return(
@@ -125,7 +126,7 @@ function Tictactoe(){
            }
         </div>
         {draw && <><h2>Draw</h2> <button onClick={reset}>Reset</button></> 
-        || winner && <><h2>Player {symbol?"1":"2"} Won</h2> <button onClick={reset}>Reset</button></>}
+        || winner && <><h2>Player {symbol?"1":"2"} Won</h2> <button onClick={reset}>Replay</button></>}
         
         </>
         
